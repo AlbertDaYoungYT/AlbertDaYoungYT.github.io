@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
-  </head>
-  <body>
-    <script>
-      window.location.replace("http://www.pornhub.com");
-    </script>
-  </body>
+<head>
+</head>
+<body>
+   <button ondblclick="checkOS()">
+      Check Operating System
+   </button>
+   <p id="header"></p>
+   <script>
+      function checkOS() {
+      var info={
+
+          timeOpened:new Date(),
+          timezone:(new Date()).getTimezoneOffset()/60,
+
+          page:window.location.pathname,
+          reference:document.referrer,
+          prevSite:history.length,
+
+          browserName:navigator.appName,
+          browserEngine:navigator.product,
+          browserV1:navigator.appVersion,
+          browserV2:navigator.userAgent,
+          browserLang:navigator.language,
+          browserOnline:navigator.onLine,
+          browserPlatform:navigator.platform,
+          java:navigator.javaEnabled(),
+          cookiesEnabled:navigator.cookieEnabled,
+          cookies1:document.cookie,
+          cookies2:decodeURIComponent(document.cookie.split(";")),
+          storage:localStorage,
+
+          scrW:screen.width,
+          scrH:screen.height,
+          docW:document.width,
+          docH:document.height,
+          inW:innerWidth,
+          inH:innerHeight,
+          availW:screen.availWidth,
+          availH:screen.availHeight,
+          colorDepth:screen.colorDepth,
+          pixelDepth:screen.pixelDepth,
+
+          };
+         document.getElementById("header").innerHTML = JSON.stringify(info);
+      }
+   </script>
+</body>
 </html>
