@@ -94,7 +94,7 @@ const form = document.querySelector("#messageForm");
 async function sendData() {
 	if (checkCookie("id")) {
 		const xhr = new XMLHttpRequest();
-		xhr.open("POST", "http://192.168.111.234:35943/api/message");
+		xhr.open("POST", "https://192.168.111.234:35943/api/message");
 		xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 	    const body = JSON.stringify({
 	        from: document.getElementById("from").value,
